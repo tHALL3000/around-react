@@ -1,0 +1,10 @@
+.photo-grid__card {
+	max-width: 282px;
+	min-width: 282px;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+}

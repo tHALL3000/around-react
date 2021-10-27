@@ -1,0 +1,23 @@
+.modal {
+	background: transparent;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+	transition: all .3s ease;
+	border-radius: 10px;
+	max-width: 75vw;
+	max-height: 75vh;
+}
+
+@media only screen and (max-width: 750px) {
+	.modal {
+		max-width: 300px;
+		min-width: 282px;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.modal {
+		min-width: 281px;
+	}
+}

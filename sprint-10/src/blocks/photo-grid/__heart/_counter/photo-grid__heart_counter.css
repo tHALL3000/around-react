@@ -1,0 +1,8 @@
+.photo-grid__heart_counter {
+	font-size: 13px;
+    line-height: 16px;
+    position: flex-end;
+    font-weight: normal;
+    color: #000;
+    margin: 10px 20px 0px 0px;
+}

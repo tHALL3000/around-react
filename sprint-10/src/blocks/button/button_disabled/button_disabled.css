@@ -1,0 +1,6 @@
+.button_disabled {
+	background-color: #e5e5e5;
+	border: 1px solid rgba(150, 150, 150, 0.2);
+	box-sizing: border-box;
+	border-radius: 2px;
+}

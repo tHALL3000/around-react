@@ -1,0 +1,24 @@
+.photo-grid__heart {
+	position: relative;
+	border-style: none;
+	cursor: pointer;
+	align-self: flex-end;
+	background: url(../../../images/heart.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-color: white;
+	outline: none;
+	width: 21px;
+	height: 19px;
+	border: none;
+	padding: 0;
+	margin: 10px 20px 0px 0px;
+
+	/* visibility: visible; */
+	/* transition: opacity 0.2s ease-in-out; */
+}
+
+.photo-grid__heart:hover {
+	opacity: 0.5;
+}

@@ -1,0 +1,26 @@
+.profile__picture-rounded {
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	background-color: transparent;
+	position: relative;
+	
+}
+@media only screen and (max-width: 900px) {
+	.profile__picture-rounded {
+		margin-left: 27px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.profile__picture-rounded {
+		margin-bottom: 26px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.profile__picture-rounded:hover {
+	background-color: rgba(0, 0, 0, .8);
+
+}

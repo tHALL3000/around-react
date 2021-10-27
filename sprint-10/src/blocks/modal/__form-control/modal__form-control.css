@@ -1,0 +1,13 @@
+.modal__form-control {
+	border-radius: 5px;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+}
+
+@media only screen and (max-width: 500px) {
+	.modal__form-control {
+		max-width: 238px;
+		margin-top: 30px;
+	}
+}
