@@ -5,6 +5,9 @@ function Main() {
 		<main className="main-content">
 			<section className="profile">
 				<button
+					onClick={
+						handleEditAvatarClick
+					}
 					className="wrapper"
 					id="userPicture"
 				>
@@ -20,12 +23,18 @@ function Main() {
 						<p className="profile__job"></p>
 					</div>
 					<button
+						onClick={
+							handleEditProfileClick
+						}
 						className="profile__edit"
 						id="editButton"
 						type="button"
 					></button>
 				</div>
 				<button
+					onClick={
+						handleAddPlaceClick
+					}
 					className="photo-add"
 					id="addPhoto"
 					type="button"

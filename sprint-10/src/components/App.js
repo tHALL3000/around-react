@@ -83,7 +83,7 @@ function App() {
 					</section>
 				</div>
 
-				<div className="overlay overlay_type_edit">
+				{/* <div className="overlay overlay_type_edit">
 					<section className="modal modal_edit_profile">
 						<button
 							className="modal__close-button"
@@ -144,7 +144,7 @@ function App() {
 							</form>
 						</div>
 					</section>
-				</div>
+				</div> */}
 				<div className="overlay overlay_type_delete">
 					<section className="modal modal_delete_confirm">
 						<button
