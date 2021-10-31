@@ -1,6 +1,6 @@
 function PopupWithForm(props) {
 	return (
-		<div className="overlay overlay_type_${props.name}">
+		<div className="overlay overlay_type_${props.name} ${isOpen ? 'popup_is-opened' : ''}">
 			<section className="modal modal_${props.name}">
 				<button
 					className="modal__close-button"
