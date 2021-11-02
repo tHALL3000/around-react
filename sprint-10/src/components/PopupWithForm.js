@@ -5,6 +5,9 @@ function PopupWithForm(props) {
 				<button
 					className="modal__close-button"
 					type="button"
+					onClick={
+						props.onClose
+					}
 				></button>
 				<div className="modal__contents">
 					<h2 className="modal__text">
@@ -12,7 +15,12 @@ function PopupWithForm(props) {
 							props.title
 						}
 					</h2>
-					<form className="form form-${props.name}">
+					<form
+						// onSubmit={
+						// 	handleSubmit
+						// }
+						className="form form-${props.name}"
+					>
 						<div
 							className="modal__form-control"
 							id="input"
@@ -33,3 +41,4 @@ function PopupWithForm(props) {
 		</div>
 	);
 }
+export default PopupWithForm;

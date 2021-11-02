@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import Header from "./Header.js";
 import Main from "./Main.js";
+import PopupWithForm from "./PopupWithForm.js";
 import Footer from "./Footer.js";
 
 function App() {
@@ -22,9 +23,15 @@ function App() {
 		setIsEditAvatarPopupOpen(
 			true
 		);
+		console.log(
+			"popup call fired"
+		);
 	}
 
 	function handleEditProfileClick() {
+		console.log(
+			"inside app.js"
+		);
 		setIspProfilePopupOpen(
 			true
 		);
@@ -44,28 +51,145 @@ function App() {
 		);
 	}
 
-	return (
-		<>
-			<body className="page">
-				<Header />
-				<Main
-					onEditProfileClick={
-						handleEditProfileClick
-					}
-					onAddPlaceClick={
-						handleAddPlaceClick
-					}
-					onEditAvatarClick={
-						handleEditAvatarClick
-					}
-					onCardClick={
-						handleCardClick
-					}
-				/>
+	function closeAllPopups() {
+		setIsEditAvatarPopupOpen(
+			false
+		);
+		setIspProfilePopupOpen(
+			false
+		);
+		setIsAddPlacePopupOpen(
+			false
+		);
+	}
 
-				<Footer />
-			</body>
-		</>
+	return (
+		<div className="page">
+			<Header />
+			<Main
+				onEditProfileClick={
+					handleEditProfileClick
+				}
+				onAddPlaceClick={
+					handleAddPlaceClick
+				}
+				onEditAvatarClick={
+					handleEditAvatarClick
+				}
+				onCardClick={
+					handleCardClick
+				}
+				onClose={
+					closeAllPopups
+				}
+			/>
+			<PopupWithForm
+				name="profile-avatar"
+				title="Change Avatar"
+				isOpen={
+					isEditAvatarPopupOpen
+				}
+				onClose={
+					closeAllPopups
+				}
+				// handleSubmit={e => }
+			>
+				<input
+					className="modal__form-control-input modal__form-control-input_profile-picture-url"
+					id="avatar"
+					type="url"
+					name="avatar"
+					required
+				/>
+				<span
+					id="avatar-error"
+					className="error-message"
+				></span>
+			</PopupWithForm>
+
+			<PopupWithForm
+				name="edit-profile"
+				title="Edit Profile"
+				isOpen={
+					isEditProfilePopupOpen
+				}
+				onClose={
+					closeAllPopups
+				}
+				// handleSubmit={e => }
+			>
+				<input
+					className="modal__form-control-input"
+					id="nameProfile"
+					type="text"
+					name="name"
+					placeholder="Name"
+					required
+					minLength="2"
+					maxLength="40"
+				/>
+				<span
+					id="nameProfile-error"
+					className="error-message"
+				></span>
+
+				<input
+					className="modal__form-control-input"
+					id="title"
+					type="text"
+					name="title"
+					placeholder="Profession"
+					required
+					minLength="2"
+					maxLength="200"
+				/>
+				<span
+					id="title-error"
+					className="error-message"
+				></span>
+			</PopupWithForm>
+
+			<PopupWithForm
+				name="photoModal"
+				title="New Place"
+				isOpen={
+					isAddPlacePopupOpen
+				}
+				onClose={
+					closeAllPopups
+				}
+				// handleSubmit={e => }
+			>
+				<input
+					className="modal__form-control-input modal__form-control-input_image"
+					id="name"
+					type="text"
+					name="name"
+					placeholder="Title"
+					required
+					minLength="1"
+					maxLength="30"
+				/>
+				<span
+					id="name-error"
+					className="error-message"
+				></span>
+
+				<input
+					className="modal__form-control-input modal__form-control-input_url"
+					id="link"
+					type="url"
+					name="link"
+					placeholder="Image link"
+					required
+				/>
+				<span
+					id="link-error"
+					className="error-message"
+				></span>
+			</PopupWithForm>
+			<Footer />
+		</div>
 	);
 }
 
