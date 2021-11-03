@@ -1,6 +1,16 @@
+import React from "react";
+import App from "./App";
 function PopupWithForm(props) {
 	return (
-		<div className="overlay overlay_type_${props.name} ${isOpen ? 'popup_is-opened' : ''}">
+		<div
+			className={`overlay overlay_type_${
+				props.name
+			} ${
+				props.isOpen
+					? "overlay_show"
+					: ""
+			}`}
+		>
 			<section className="modal modal_${props.name}">
 				<button
 					className="modal__close-button"

@@ -24,7 +24,7 @@ function App() {
 			true
 		);
 		console.log(
-			"popup call fired"
+			"popup call"
 		);
 	}
 
