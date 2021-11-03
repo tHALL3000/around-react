@@ -1,7 +1,21 @@
 import React from "react";
 import App from "./App";
+import { api } from "../utils/api";
 
 function Main(props) {
+	const [userName, setUserName] =
+		useState(
+			""
+		);
+	const [
+		userDescription,
+		setUserDescription,
+	] = useState("");
+	const [userAvatar, setUserAvatar] =
+		useState(
+			""
+		);
+
 	return (
 		<>
 			<main className="main-content">
