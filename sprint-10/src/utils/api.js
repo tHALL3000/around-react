@@ -190,4 +190,10 @@ class Api {
 		);
 	}
 }
-export let api = new Api();
+export let api = new Api({
+	baseUrl: "https://around.nomoreparties.co/v1/group-11",
+	headers: {
+		authorization: "f1a3823e-fb3e-4cac-8943-fd9e95cc434f",
+		"Content-Type": "application/json",
+	},
+});

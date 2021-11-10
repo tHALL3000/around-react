@@ -1,20 +1,64 @@
 import React from "react";
-import App from "./App";
+//import App from "./App";
 import { api } from "../utils/api";
+//import card here
 
 function Main(props) {
 	const [userName, setUserName] =
-		useState(
+		React.useState(
 			""
 		);
 	const [
 		userDescription,
 		setUserDescription,
-	] = useState("");
+	] = React.useState("");
 	const [userAvatar, setUserAvatar] =
-		useState(
+		React.useState(
 			""
 		);
+	const [cards, setCards] =
+		React.useState(
+			[]
+		);
+
+	React.useEffect(() => {
+		api.getProfile().then(
+			(
+				res
+			) => {
+				setUserName(
+					res.name
+				);
+				setUserDescription(
+					res.about
+				);
+			}
+		);
+	}, [userName]);
+
+	React.useEffect(() => {
+		api.getProfile().then(
+			(
+				res
+			) => {
+				setUserAvatar(
+					res.avatar
+				);
+			}
+		);
+	}, [userAvatar]);
+
+	React.useEffect(() => {
+		api.addCard().then(
+			(
+				res
+			) => {
+				setCards(
+					res
+				);
+			}
+		);
+	}, [userAvatar]);
 
 	return (
 		<>
@@ -31,7 +75,7 @@ function Main(props) {
 						<img
 							className="profile__picture-rounded"
 							src="Save"
-							alt="Profile picture"
+							alt="Profile round"
 						/>
 					</button>
 
