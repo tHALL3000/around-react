@@ -23,10 +23,10 @@ function Main(props) {
   }, [userAvatar]);
 
   React.useEffect(() => {
-    api.addCard(cards).then(res => {
+    api.getInitialCards().then(res => {
       setCards(res);
     });
-  }, [cards]);
+  }, [userName]);
 
   return (
     <>
