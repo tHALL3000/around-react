@@ -1,22 +1,16 @@
-function PopupWithImage() {
-	return (
-		<div class="overlay overlay_type_preview">
-			<section class="modal">
-				<button
-					class="modal__close-button modal__close-button_image"
-					type="button"
-				></button>
-				<div class="modal__photo-container">
-					<figure class="modal__figure">
-						<img
-							class="modal__image"
-							src=" "
-							alt=" "
-						/>
-						<figcaption class="modal__caption"></figcaption>
-					</figure>
-				</div>
-			</section>
-		</div>
-	);
+function PopupWithImage(props) {
+  return (
+    <div className={`overlay overlay_type_${props.name} ${props.isOpen ? 'overlay_show' : ''}`}>
+      <section className="modal modal_photo-container">
+        <button className="modal__close-button" type="button" onClick={props.onClose}></button>
+        <div className="modal__photo-container">
+          <figure className="modal__figure">
+            <img className="modal__image" src={props.card} alt=" " />
+            <figcaption className="modal__caption"></figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  );
 }
+export default PopupWithImage;

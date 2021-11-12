@@ -1,5 +1,4 @@
 import React from 'react';
-//import App from "./App";
 import {api} from '../utils/api';
 import Card from './Card';
 
@@ -62,10 +61,10 @@ function Main(props) {
           ></button>
         </section>
 
-        <Card cards={cards}></Card>
+        <Card cards={cards} onCardClick={props.onCardClick} />
       </main>
 
-      <div className="overlay overlay_type_delete">
+      {/* <div className="overlay overlay_type_delete">
         <section className="modal modal_delete_confirm">
           <button
             onClick={props.onCloseAllPopups}
@@ -99,7 +98,7 @@ function Main(props) {
             </figure>
           </div>
         </section>
-      </div>
+      </div> */}
     </>
   );
 }

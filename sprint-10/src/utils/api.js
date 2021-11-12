@@ -38,9 +38,14 @@ class Api {
     }).then(res => this._checkResReturnJson(res));
   }
 
-  getInitialCards() {
+  addCard(card) {
     return fetch(`${this.url}/cards`, {
+      method: 'POST',
       headers: this.headers,
+      body: JSON.stringify({
+        link: card.link,
+        name: card.name,
+      }),
     }).then(res => this._checkResReturnJson(res));
   }
 
