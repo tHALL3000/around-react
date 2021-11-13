@@ -1,4 +1,4 @@
-function PopupWithImage(props) {
+function ImagePopup(props) {
   return (
     <div className={`overlay overlay_type_${props.name} ${props.card ? 'overlay_show' : ''}`}>
       <section className="modal modal_photo-container">
@@ -13,4 +13,4 @@ function PopupWithImage(props) {
     </div>
   );
 }
-export default PopupWithImage;
+export default ImagePopup;

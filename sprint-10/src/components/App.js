@@ -4,7 +4,7 @@ import Header from './Header.js';
 import Main from './Main.js';
 import PopupWithForm from './PopupWithForm.js';
 import Footer from './Footer.js';
-import PopupWithImage from './PopupwithImage';
+import ImagePopup from './ImagePopup';
 import {api} from '../utils/api';
 
 function App() {
@@ -139,7 +139,7 @@ function App() {
         />
         <span id="link-error" className="error-message"></span>
       </PopupWithForm>
-      <PopupWithImage name="preview" onClose={closeAllPopups} card={selectedCard} />
+      <ImagePopup name="preview" onClose={closeAllPopups} card={selectedCard} />
       <Footer />
     </div>
   );
