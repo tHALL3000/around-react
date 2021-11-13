@@ -60,8 +60,9 @@ function Main(props) {
             type="button"
           ></button>
         </section>
-
-        <Card cards={cards} onCardClick={props.onCardClick} />
+        <ul className="photo-grid">
+          <Card cards={cards} onCardClick={props.onCardClick} />
+        </ul>
       </main>
 
       {/* <div className="overlay overlay_type_delete">
