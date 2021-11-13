@@ -28,7 +28,7 @@ function Main(props) {
   }, [userName]);
 
   return (
-    <>
+    <div className="page">
       <main className="main-content">
         <section className="profile">
           <button
@@ -99,7 +99,7 @@ function Main(props) {
           </div>
         </section>
       </div> */}
-    </>
+    </div>
   );
 }
 export default Main;

@@ -27,6 +27,11 @@ class Api {
     }).then(res => this._checkResReturnJson(res));
   }
 
+  /**
+   *
+   * Takes item, and PATCH request
+   * {name, title}
+   */
   setProfile(item) {
     return fetch(`${this.url}/users/me`, {
       method: 'PATCH',
@@ -74,7 +79,7 @@ class Api {
       headers: this.headers,
     });
   }
-  //PATCH https://around.nomoreparties.co/v1/groupId/users/me/avatar
+
   updateProfilePicture(avatar) {
     return fetch(`${this.url}/users/me/avatar`, {
       method: 'PATCH',

@@ -5,10 +5,11 @@ import Main from './Main.js';
 import PopupWithForm from './PopupWithForm.js';
 import Footer from './Footer.js';
 import PopupWithImage from './PopupwithImage';
+import {api} from '../utils/api';
 
 function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [isEditProfilePopupOpen, setIspProfilePopupOpen] = React.useState(false);
+  const [isEditProfilePopupOpen, setIsProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState(false);
 
@@ -19,21 +20,32 @@ function App() {
 
   function handleEditProfileClick() {
     console.log('inside app.js');
-    setIspProfilePopupOpen(true);
+    setIsProfilePopupOpen(true);
   }
 
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
   }
 
-  function handleCardClick() {
-    // document.querySelector('.overlay_type_preview').classList.add('overlay_show');
-    setSelectedCard(true);
+  function handleCardClick(card) {
+    setSelectedCard(card);
   }
+
+  //   function handleSubmitProfile(e) {
+  //     e.preventDefault();
+  // 	  console.log('the submit button was fired');
+  // 		api.setProfile(item);
+  //   }
+
+  //   function handleSubmitAddCard(e, card) {
+  //     e.preventDefault();
+  //     console.log('the submit button was fired');
+  //     api.addCard(card);
+  //   }
 
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
-    setIspProfilePopupOpen(false);
+    setIsProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setSelectedCard(false);
   }
@@ -47,13 +59,14 @@ function App() {
         onEditAvatarClick={handleEditAvatarClick}
         onCardClick={handleCardClick}
         onClose={closeAllPopups}
+        // onSubmit={handleSubmit}
       />
       <PopupWithForm
         name="profile-avatar"
         title="Change Avatar"
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}
-        // handleSubmit={e => }
+        // handleSubmit={handleSubmit}
       >
         <input
           className="modal__form-control-input modal__form-control-input_profile-picture-url"
@@ -70,7 +83,7 @@ function App() {
         title="Edit Profile"
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
-        // handleSubmit={e => }
+        // handleSubmit={handleSubmit}
       >
         <input
           className="modal__form-control-input"
@@ -102,7 +115,7 @@ function App() {
         title="New Place"
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}
-        // handleSubmit={e => }
+        // handleSubmit={handleSubmitAddCard}
       >
         <input
           className="modal__form-control-input modal__form-control-input_image"
@@ -126,7 +139,7 @@ function App() {
         />
         <span id="link-error" className="error-message"></span>
       </PopupWithForm>
-      <PopupWithImage name="preview" isOpen={selectedCard} onClose={closeAllPopups} />
+      <PopupWithImage name="preview" onClose={closeAllPopups} card={selectedCard} />
       <Footer />
     </div>
   );
