@@ -1,5 +1,5 @@
 import React from 'react';
-import '../blocks/index.css';
+import '/src/blocks/index.css';
 import Header from './Header.js';
 import Main from './Main.js';
 import PopupWithForm from './PopupWithForm.js';
