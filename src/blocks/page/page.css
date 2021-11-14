@@ -1,8 +1,8 @@
 .page {
 	position: relative;
 	align-content: center;
-	max-width: 880px;
-	margin-left: auto;
+	max-width: 100%;
+	margin-left: 0;
 	margin-right: auto;
 	/* max-height: 100%; */
 	background: #000;

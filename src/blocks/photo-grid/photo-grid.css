@@ -1,8 +1,8 @@
 .photo-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	grid-column-gap: 16px;
-	grid-row-gap: 16px;
+	grid-column-gap: 17px;
+	grid-row-gap: 20px;
 	margin: 0 auto 92px;
 	object-fit: cover;
 	align-items: stretch;

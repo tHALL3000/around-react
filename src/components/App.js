@@ -11,15 +11,13 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [isEditProfilePopupOpen, setIsProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
-    console.log('popup call');
   }
 
   function handleEditProfileClick() {
-    console.log('inside app.js');
     setIsProfilePopupOpen(true);
   }
 
@@ -47,7 +45,7 @@ function App() {
     setIsEditAvatarPopupOpen(false);
     setIsProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
-    setSelectedCard(false);
+    setSelectedCard({});
   }
 
   return (
@@ -75,7 +73,7 @@ function App() {
           name="avatar"
           required
         />
-        <span id="avatar-error" className="error-message"></span>
+        <span id="avatar-error" className="error-message" />
       </PopupWithForm>
 
       <PopupWithForm
@@ -95,7 +93,7 @@ function App() {
           minLength="2"
           maxLength="40"
         />
-        <span id="nameProfile-error" className="error-message"></span>
+        <span id="nameProfile-error" className="error-message" />
 
         <input
           className="modal__form-control-input"
@@ -107,7 +105,7 @@ function App() {
           minLength="2"
           maxLength="200"
         />
-        <span id="title-error" className="error-message"></span>
+        <span id="title-error" className="error-message" />
       </PopupWithForm>
 
       <PopupWithForm
@@ -127,7 +125,7 @@ function App() {
           minLength="1"
           maxLength="30"
         />
-        <span id="name-error" className="error-message"></span>
+        <span id="name-error" className="error-message" />
 
         <input
           className="modal__form-control-input modal__form-control-input_url"
@@ -137,7 +135,7 @@ function App() {
           placeholder="Image link"
           required
         />
-        <span id="link-error" className="error-message"></span>
+        <span id="link-error" className="error-message" />
       </PopupWithForm>
       <ImagePopup name="preview" onClose={closeAllPopups} card={selectedCard} />
       <Footer />
